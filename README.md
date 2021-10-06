@@ -1,12 +1,9 @@
-# Tailwind css-vertical-rhythm
-
-# Tailwind css-documentation
-https://tailwindcss.com/docs
+# Tailwindcss-vertical-rhythm
 
 A tailwind plugin that helps create scaling typography. It does the CSS math so you don't have to.
 
-The term **vertical rhythm** is an old typography practice designers have been using for years; it controls the flow of a piece of media content, improving the readability of content and creating a cohesive-looking design. This has become an increasingly difficult problem in the digital age with the variation of
-Screen sizes, pixel density ratios and changing containers give designers less control over the final output and why it's _usually_ best to leverage existing base kits like Tailwind's defaults, Bootstrap, etc. Unless you want to be a font/type nerd; then this is the plugin for you. 💖
+The term **vertical rhythm** is an old typography practice designers have been using for years, it controls the flow of a piece of media's content improving the readability of content and creating a cohesive looking design. This has become an increasingly difficult problem in the digital age with the variation of
+screen sizes, pixel density ratios and changing containers give designers less control over the final output and why it's _usually_ best to leverage existing base kits like Tailwind's defaults, Bootstrap, etc. Unless you want to be a font/type nerd; then this is the plugin for you. 💖
 
 ## Features:
 
@@ -18,20 +15,20 @@ Screen sizes, pixel density ratios and changing containers give designers less c
 - Highly Customizable
 - 100% CSS
 
-This plugin started as a side project focusing on typography on the web, particularly with scaling font size to the screen size. I was annoyed with how tiny are on fonts most websites use for ultra-wide screens with high resolutions. I usually end up zooming in on pages to make it nice. Basically, the higher the resolution, the smaller the text renders. Refusing to admit, I'm old, I started looking into the topic and here we are.
+This plugin started as a side project focusing on typography on the web, particularly with scaling font size to the screen size. I was annoyed with how tiny are on fonts most websites use for ultra wide screens with high resolutions. I usually end up zooming in on pages to make it nice. Basically the higher the resolution the smaller the text renders. Refusing to admit I'm old I started looking into the topic and here we are.
 
 ## [Site with examples (WIP)](https://terrysmithdc.github.io/tailwindcss-vertical-rhythm/)
 
-## Looking for help! Particularly in getting some hosted examples, typography is very visual! Checkout the Issues on GitHub or let me know if you end up using this plugin! 👀
+## Looking for help! Particularly in getting some hosted examples, typography is very visual! Checkout the Issues in GitHub or let me know if you end up using this plugin! 👀
 
 # Installation
 
-You can install the library using your preferred package manager.
+You can install the library using your prefered package manager
 
 ## NPM
 
 ```sh
-npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npm install -D tailwindcss-vertical-rhythm
 ```
 
 ## Yarn
@@ -88,13 +85,13 @@ Example HTML:
 
 ## Thinking in factors
 
-When dealing with digital screens, it's best to think of font sizes as being relative vs pixel perfect. Most designs nowadays use a predefined scale and stick to that to be consistent, but the problem is as we get more varied resolutions on devices the designs start looking different. There can also become a disjoin in the whitespace around those scales if you are setting them manually. Not all designs need to be using vertical rhythm, for years; more of the web has been based on "feel" vs math. Usually these simple pre-set sizes are considered "good enough" because it's not worth the development effort to tune the translation from a designers vision into practice across all these devices.
+When dealing with digital screens it's best to think of font sizes as being relative vs pixel perfect. Most designs nowadays use a predefined scale and stick to that to be consistent, but the problem is as we get more varied resolutions on devices the designs start looking different. There can also become a disjoin in the whitespace around those scales if you are setting them manually. Not all designs need to be using vertical rhythm, for years more of the web has been based on "feel" vs math. Usually these simple pre-set sizes are considered "good enough" because it's not worth the development effort to tune the translation from a designers vision into practice across all these devices.
 
-Tailwind's text sizing classes are great but also have the problem of the rem-based font sizes being rendered at a different ratio of screen space depending on the device.
+Tailwind's text sizing classes are great but also have the problem of the rem based font sizes are rendered at a different ratio of screen space depending on the device.
 
 The most basic lego block of a website using vertical rhythm is starting with a base font size and scaling up or down from there using a **modular scale**.
 
-Let's say the base size of a html document is 16px per 1rem; this is the base factor. The next factor up would be your base (1rem) times a modular scale; let's use a major third.
+Let's say the base size of a html document is 16px per 1rem, this is the base factor. The next factor up would be your base (1rem) times a modular scale, let's use a major third.
 
 > 1rem \* 1.25 = 1.25rem
 
@@ -108,11 +105,11 @@ Ok we have a base factor and a factor one size up. The next factor up would be c
 | 2xl         | 1.5625rem \* 1.25   | 1.95325rem       |
 | 3xl         | 1.953125rem \* 1.25 | 2.4415625rem     |
 
-This concept of scaling font sizes has been around for a while, and it's often talked about along with grid systems (and maybe the golden ratio) back when you'd need a library to do it instead of using flexbox or grid. There's even calculators out there so you can set up your own modular scale online; however these either require you to manually manage hard-coded values, use css `calc()` which can be expensive, or use a post-processor like sass.
+This concept of scaling font sizes has been around for a while, and it often talked about along with grid systems (and maybe the golden ratio) back when you'd need a library to do it instead of using flexbox or grid. There's even calculators out there so you can set up your own modular scale online, however these either require you to manually manage hard coded values, use css `calc()` which can be expensive, or use a post processor like sass.
 
-Ok, now that we know how modular scales work, what can be applied to it? Quite a bit really, however, now that we have `font-size` on a modular scale, there's a few more things to worry about. As fonts get larger in CSS, we also need to worry about line height (covered in tailwinds font sizes as of 2.0), white spacing before and after, while also matching the modular scale to maintain the vertical rhythm as the eye skims a page.
+Ok now that we know how modular scales work, what can be applied to it? Quite a bit really, however now that we have `font-size` on a modular scale there's a few more things to worry about. As fonts get larger in CSS we also need to worry about line height (covered in tailwinds font sizes as of 2.0), white spacing before and after while also matching the modular scale to maintain the vertical rhythm as the eye skims a page.
 
-Base second third, fifth factors don't feel very in the spirit of Tailwind, so factor classes follow a similar naming convention of `xs`, `sm`, `base`, `lg`, `xl`, `2xl`, `3xl`, `4xl`.
+Base, second, third, fifth factors don't feel very in the spirit of Tailwind so factor classes follow a similar naming convention of `xs`, `sm`, `base`, `lg`, `xl`, `2xl`, `3xl`, `4xl`.
 
 ## But wait! Things still don't look 100%
 
@@ -198,11 +195,11 @@ or
 
 # Dynamic Mode
 
-Dynamic mode switches type rendering over to use dynamic font scaling while using the vertical rhythm values with using [css clamp](<https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()>). Text will now scale linearly up and down depending on the vw of the device based on [this great CSS Tricks article by Pedro Rodriguez](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/).
+Dynamic mode switches type rendering over to use dynamic font scaling while using the vertical rhythm values with the use of [css clamp](<https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()>). Text will now scale linearly up and down depending on the vw of the device based on [this great CSS Tricks article by Pedro Rodriguez](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/).
 
 ### Linear Scaling Zones
 
-The zones font scale be customized by either passing a number value or accessing the tailwind theme function in your `tailwind.config.js` file. By default the min and max are tailwind responsive theme values `screens.md` and `screens.2xl`.
+The zones fonts scale be customized by either passing a number value or accessing the tailwind theme function in your `tailwind.config.js` file. By default the min and max are tailwind responsive theme values `screens.md` and `screens.2xl`.
 
 In the `tailwind.config.js` configuration:
 
